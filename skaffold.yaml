@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2alpha1
+kind: Config
+metadata:
+  name: minikube-tutorial
+build:
+  artifacts:
+  - image: nnnamani/sample-app
+    context: ./app/
+deploy:
+  kubectl:
+    manifests:
+    - ./app/kubernetes/deployment.yaml
